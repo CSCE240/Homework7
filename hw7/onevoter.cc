@@ -95,29 +95,28 @@ string OneVoter::ConvertTime(int time_in_seconds) const {
   string s = "";
 
   hours = time_in_seconds / 3600;
-  minutes = (time_in_seconds - 3600*hours) / 60;
-  seconds = (time_in_seconds - 3600*hours - 60*minutes);
+  minutes = (time_in_seconds - 3600 * hours) / 60;
+  seconds = (time_in_seconds - 3600 * hours - 60 * minutes);
 
   s += Utils::Format(time_in_seconds, 6);
 
-  if(hours < 0) {
+  if (hours < 0)
     s += " 00";
-  } else if(hours < 10) {
+  else if (hours < 10)
     s += " 0" + Utils::Format(hours, 1);
-  } else {
+  else
     s += " " + Utils::Format(hours, 2);
-  }
 
-  if(minutes < 0)
+  if (minutes < 0)
     s += ":00";
-  else if(minutes < 10)
+  else if (minutes < 10)
     s += ":0" + Utils::Format(minutes, 1);
   else
     s += ":" + Utils::Format(minutes, 2);
 
-  if(seconds < 0)
+  if (seconds < 0)
     s += ":00";
-  else if(seconds < 10)
+  else if (seconds < 10)
     s += ":0" + Utils::Format(seconds, 1);
   else
     s += ":" + Utils::Format(seconds, 2);
@@ -128,31 +127,31 @@ string OneVoter::ConvertTime(int time_in_seconds) const {
 /****************************************************************
 **/
 string OneVoter::ToString() {
-string s = kTag;
+  string s = kTag;
 
-s += Utils::Format(sequence_, 7);
-s += ": ";
-s += Utils::Format(this->GetTOD(time_arrival_seconds_));
-s += " ";
-s += Utils::Format(this->GetTOD(time_start_voting_seconds_));
-s += " ";
-s += Utils::Format(this->ConvertTime(time_vote_duration_seconds_));
-s += " ";
-s += Utils::Format(this->GetTOD(time_start_voting_seconds_ + time_vote_duration_seconds_));
-s += " ";
-s += Utils::Format(this->ConvertTime(GetTimeInQ()));
-s += ": ";
-s += Utils::Format(which_station_, 4);
+  s += Utils::Format(sequence_, 7);
+  s += ": ";
+  s += Utils::Format(this->GetTOD(time_arrival_seconds_));
+  s += " ";
+  s += Utils::Format(this->GetTOD(time_start_voting_seconds_));
+  s += " ";
+  s += Utils::Format(this->ConvertTime(time_vote_duration_seconds_));
+  s += " ";
+  s += Utils::Format(this->GetTOD(time_start_voting_seconds_ + time_vote_duration_seconds_));
+  s += " ";
+  s += Utils::Format(this->ConvertTime(GetTimeInQ()));
+  s += ": ";
+  s += Utils::Format(which_station_, 4);
 
-return s;
+  return s;
 } // string OneVoter::toString()
 
 /****************************************************************
 * 
 **/
 string OneVoter::ToStringHeader() {
-string s = kTag;
-s += "    Seq        Arr           Start             Dur             End            Wait         Stn";
-return s;
+  string s = kTag;
+  s += "    Seq        Arr           Start             Dur             End            Wait         Stn";
+  return s;
 }
 
