@@ -9,8 +9,7 @@
 
 static const string kTag = "MAIN: ";
 
-int main(int argc, char *argv[])
-{
+int main(int argc, char *argv[]) {
   string config_filename;
   string pct_filename = "XX";
   string log_filename = "XX";
@@ -82,7 +81,7 @@ int main(int argc, char *argv[])
   Utils::FileClose(out_stream);
   Utils::FileClose(Utils::log_stream);
 
-  cout<< kTag << "Ending execution" << endl;
+  cout << kTag << "Ending execution" << endl;
 
   return 0;
 }
