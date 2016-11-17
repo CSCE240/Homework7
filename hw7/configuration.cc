@@ -68,6 +68,8 @@ void Configuration::ReadConfiguration(Scanner& instream) {
 }
 
 /****************************************************************
+ * Function 'ToString'.
+ * This returns the seed that is used in the simulation later
 **/
 string Configuration::ToString()
 {
