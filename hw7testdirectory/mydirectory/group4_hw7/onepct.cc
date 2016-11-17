@@ -47,12 +47,13 @@ int OnePct::GetPctNumber() const {
 * General functions.
 **/
 /******************************************************************************
+* Computes mean and standard deviation of the wait time.
+* pct_expected_voters_ must be greater than zero.
 **/
 void OnePct::ComputeMeanAndDev() {
-  int sum_of_wait_times_seconds = 0;
-  double sum_of_adjusted_times_seconds = 0.0;
-  sum_of_wait_times_seconds = 0; // duplicate?
   multimap<int, OneVoter>::iterator iter_multimap;
+
+  int sum_of_wait_times_seconds = 0;
   for (iter_multimap = voters_done_voting_.begin();
        iter_multimap != voters_done_voting_.end(); ++iter_multimap) {
     OneVoter voter = iter_multimap->second;
@@ -61,13 +62,12 @@ void OnePct::ComputeMeanAndDev() {
   wait_mean_seconds_ = static_cast<double>(sum_of_wait_times_seconds)
                      / static_cast<double>(pct_expected_voters_);
 
-  sum_of_adjusted_times_seconds = 0.0;
+  double sum_of_adjusted_times_seconds = 0.0;
   for (iter_multimap = voters_done_voting_.begin();
        iter_multimap != voters_done_voting_.end(); ++iter_multimap) {
     OneVoter voter = iter_multimap->second;
     double this_addin = static_cast<double>(voter.GetTimeWaiting())
                       - wait_mean_seconds_;
-
     sum_of_adjusted_times_seconds += (this_addin) * (this_addin);
   }
   wait_dev_seconds_ = sqrt(sum_of_adjusted_times_seconds
@@ -81,15 +81,11 @@ void OnePct::CreateVoters(const Configuration& config, MyRandom& random,
   int duration = 0;
   int arrival = 0;
   int sequence = 0;
-  double percent = 0.0;
+  double percent = config.arrival_zero_;
   string outstring = "XX";
-
   voters_backup_.clear();
-  sequence = 0; // duplicate?
-
-  percent = config.arrival_zero_; // also weird
   int voters_at_zero = round((percent / 100.0) * pct_expected_voters_);
-  arrival = 0; // duplicate?
+
   for (int voter = 0; voter < voters_at_zero; ++voter) {
     int durationsub = random.RandomUniformInt(0, config.GetMaxServiceSubscript());
     duration = config.actual_service_times_.at(durationsub);
@@ -103,7 +99,7 @@ void OnePct::CreateVoters(const Configuration& config, MyRandom& random,
     int voters_this_hour = round((percent / 100.0) * pct_expected_voters_);
     if (0 == hour % 2)
       ++voters_this_hour;
-    int arrival = hour*3600;
+    int arrival = hour * 3600;
     for(int voter = 0; voter < voters_this_hour; ++voter) {
       double lambda = static_cast<double>(voters_this_hour / 3600.0);
       int interarrival = random.RandomExponentialInt(lambda);
@@ -398,4 +394,3 @@ string OnePct::ToStringVoterMap(string label,
 
   return s;
 } // string OnePct::ToString()
-
