@@ -87,6 +87,11 @@ string OneVoter::GetTOD(int time_in_seconds) const {
 }
 
 /****************************************************************
+* Parameter: An integer of time in second
+*
+* This method uses an certain amount of second, calulates how many
+* hours and minutes. It then does checking to see if any values are
+* under zero, if not, then it prints the hours, second, or minutes.
 **/
 string OneVoter::ConvertTime(int time_in_seconds) const {
   int hours = 0;
@@ -95,8 +100,15 @@ string OneVoter::ConvertTime(int time_in_seconds) const {
   string s = "";
 
   hours = time_in_seconds / 3600;
-  minutes = (time_in_seconds - 3600 * hours) / 60;
-  seconds = (time_in_seconds - 3600 * hours - 60 * minutes);
+  //minutes = (time_in_seconds - 3600 * hours) / 60;
+  //seconds = (time_in_seconds - 3600 * hours - 60 * minutes);
+  
+  //------REVISED CODE ---------------
+  
+  minutes = time_in_seconds / 60;
+  second = time_in_seconds;
+  
+  //----------------------------------
 
   s += Utils::Format(time_in_seconds, 6);
 
