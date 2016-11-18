@@ -36,6 +36,11 @@ int Configuration::GetMaxServiceSubscript() const {
 **/
 void Configuration::ReadConfiguration(Scanner& instream) {
 /*
+* Makes a string on the first line in the file. It then tokenizes 
+* the seed as the first integer it encouters. It then sets the election
+* day length hours, length second, min and max expected to simulate, the
+* time of waiting too long in minutes and lastly the number of 
+* iterations. These are all integer values.
 */
   string line;
   ScanLine scanline;
@@ -50,7 +55,13 @@ void Configuration::ReadConfiguration(Scanner& instream) {
   max_expected_to_simulate_ = scanline.NextInt();
   wait_time_minutes_that_is_too_long_ = scanline.NextInt();
   number_of_iterations_ = scanline.NextInt();
-
+/*
+* The program then moves to the next line in the file and set the
+* first value to an arrival zero double. The rest of the line is 
+* the input, which are double values. Then those values are pushed
+* onto the vector of arrival fractions.
+*/
+  
   line = instream.NextLine();
   scanline.OpenString(line);
   arrival_zero_ = scanline.NextDouble();
