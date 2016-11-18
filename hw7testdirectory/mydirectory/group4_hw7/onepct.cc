@@ -52,6 +52,8 @@ int OnePct::GetPctNumber() const {
 **/
 void OnePct::ComputeMeanAndDev() {
   multimap<int, OneVoter>::iterator iter_multimap;
+  
+  // We iterate through the vector and gather all of the voters waiting time.
 
   int sum_of_wait_times_seconds = 0;
   for (iter_multimap = voters_done_voting_.begin();
