@@ -77,6 +77,14 @@ void OnePct::ComputeMeanAndDev() {
 }
 
 /****************************************************************
+* Function 'CreateVoters'
+*
+* This function creates a new instance of a voters(kinda)
+* 
+* Parameters:
+*    config - The configuration
+*    random - An instance of the MyRandom class
+*    out_stream - The stream that we are using to write
 **/
 void OnePct::CreateVoters(const Configuration& config, MyRandom& random,
                           ofstream& out_stream) {
@@ -179,6 +187,11 @@ int OnePct::DoStatistics(int iteration, const Configuration& config,
 }
 
 /****************************************************************
+* Function 'ReadData'
+* This sets all of the values in the file to the corresponding variables
+*
+* Parameters: 
+*    infile - The file we will be looking at
 **/
 void OnePct::ReadData(Scanner& infile) {
   if (infile.HasNext()) {
