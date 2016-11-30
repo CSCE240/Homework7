@@ -15,6 +15,8 @@ int main(int argc, char *argv[]) {
   string log_filename = "XX";
   string out_filename = "XX";
   string outstring = "XX";
+  // What does timecall_output do? This could be a dead variable as it is only declared once
+  // and never used again.
   string timecall_output = "XX";
 
   ofstream out_stream;
