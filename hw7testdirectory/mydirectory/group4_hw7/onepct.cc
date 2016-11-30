@@ -54,6 +54,8 @@ void OnePct::ComputeMeanAndDev() {
   multimap<int, OneVoter>::iterator iter_multimap;
   
   // We iterate through the vector and gather all of the voters waiting time.
+  // the times are then added up to get a sum. An average is found from that.
+  
 
   int sum_of_wait_times_seconds = 0;
   for (iter_multimap = voters_done_voting_.begin();
@@ -63,7 +65,11 @@ void OnePct::ComputeMeanAndDev() {
   }
   wait_mean_seconds_ = static_cast<double>(sum_of_wait_times_seconds)
                      / static_cast<double>(pct_expected_voters_);
-
+  // The process is slightly repeated. It iterates through the mulitmap and
+  // gets the voter at each iteration and finds the difference between that
+  // voters wait time and the mean wait time which is 'this_addin'. It is 
+  // then squared and then the wait_dev_seconds is found
+  
   double sum_of_adjusted_times_seconds = 0.0;
   for (iter_multimap = voters_done_voting_.begin();
        iter_multimap != voters_done_voting_.end(); ++iter_multimap) {
@@ -95,6 +101,10 @@ void OnePct::CreateVoters(const Configuration& config, MyRandom& random,
   string outstring = "XX";
   voters_backup_.clear();
   int voters_at_zero = round((percent / 100.0) * pct_expected_voters_);
+  
+  // This loops through and gathers all the info needed to create and voter 
+  // such as the sequence, arrival, and duration. It then creates a voter based
+  // off such information and adds that voter to the map of voter backup.
 
   for (int voter = 0; voter < voters_at_zero; ++voter) {
     int durationsub = random.RandomUniformInt(0, config.GetMaxServiceSubscript());
