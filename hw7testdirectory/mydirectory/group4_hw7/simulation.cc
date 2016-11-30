@@ -36,6 +36,16 @@ void Simulation::ReadPrecincts(Scanner& infile) {
   } // while (infile.HasNext()) {
 } // void Simulation::ReadPrecincts(Scanner& infile) {
 /****************************************************************
+* Function 'Run Simulation'
+*
+* Parameters:
+*     config -
+*     random - An instance of a MyRandom class
+*     out_stream - The output stream 
+* 
+* This function iterates threw the map of OnePct and its going to get each 
+* expected voter for each pct. It does checking to make sure it is not
+* less than that minimum expected and larger than the expected maximum.
 **/
 void Simulation::RunSimulation(const Configuration& config,
                                MyRandom& random, ofstream& out_stream) {
