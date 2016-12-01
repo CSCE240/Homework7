@@ -1,8 +1,17 @@
 /****************************************************************
  * Header file for the random number generator.
+ * This is declaring the functions used for the RNG. The .cc file
+ * should be considered for black box testing purposes; not much
+ * of this class should be modified in the future.
  *
  * Author/copyright:  Duncan Buell
- * Date: 23 May 2016
+ * Used with permission and modified by: Group 4
+ *                                       Erik Akeyson
+ *                                       Matthew Clapp
+ *                                       Harrison Goodman
+ *                                       Andy Michels
+ *                                       Steve Smero
+ * Date: 1 December 2016
  *
 **/
 
