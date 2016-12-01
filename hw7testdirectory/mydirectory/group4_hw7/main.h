@@ -1,8 +1,17 @@
 /****************************************************************
  * Header for the 'Main' class.
+ * This is a generic header file that includes the header files
+ * for Configuration, Simulation, and MyRandom for their use in
+ * Main (Utilities are also included).
  *
  * Author/copyright:  Duncan Buell
- * Date: 6 October 2016
+ * Used with permission and modified by: Group 4
+ *                                       Erik Akeyson
+ *                                       Matthew Clapp
+ *                                       Harrison Goodman
+ *                                       Andy Michels
+ *                                       Steve Smero
+ * Date: 1 December 2016
  *
 **/
 
