@@ -1,9 +1,19 @@
 #include "simulation.h"
 /****************************************************************
-* Implementation for the 'Simulation' class.
-*
-* Author/copyright:  Duncan Buell
-* Date: 19 July 2016
+ * Implementation for the 'Simulation' class.
+ * This class is the one running the whole simulation for the
+ * program. It will iterate through the precincts and simulate
+ * all of them. However, OnePct does most of the simulation work,
+ * but this class will simulate all precincts.
+ *
+ * Author/copyright:  Duncan Buell
+ * Used with permission and modified by: Group 4
+ *                                       Erik Akeyson
+ *                                       Matthew Clapp
+ *                                       Harrison Goodman
+ *                                       Andy Michels
+ *                                       Steve Smero
+ * Date: 1 December 2016
 *
 **/
 
