@@ -15,6 +15,12 @@ static const string kTag = "ONEVOTER: ";
 OneVoter::OneVoter() {
 }
 /****************************************************************
+* Parameters:
+* 
+*     sequence - an integer number to represent the sequence number
+*     arrival_seconds - the time it took for them to arive in seconds
+*     duration_seconds - the amount of time it took the voter to vote  
+*                        in secs  
 **/
 OneVoter::OneVoter(int sequence, int arrival_seconds, int duration_seconds) {
   sequence_ = sequence;
@@ -55,6 +61,16 @@ int OneVoter::GetStationNumber() const {
 **/
 
 /****************************************************************
+* Function 'AssignStation'
+*
+* This function will assign a voter to a specific station. It also
+* calculates how long it took the voter to vote at the station
+* and how long it took them to reach it 
+*
+* Parameters:
+*
+*     station_number - an interger value to represent the station number
+*     start_time_seconds - The amount of time it took start voting in secs
 **/
 void OneVoter::AssignStation(int station_number, int start_time_seconds) {
   which_station_ = station_number;
