@@ -1,8 +1,17 @@
 /****************************************************************
  * Header for the 'Configuration' class
+ * The configuration header file is another generic header file
+ * that will initialize all of the variables to dummy values before
+ * they are given values in the .cc file.
  *
  * Author/copyright:  Duncan Buell
- * Date: 19 July 2016
+ * Used with permission and modified by: Group 4
+ *                                       Erik Akeyson
+ *                                       Matthew Clapp
+ *                                       Harrison Goodman
+ *                                       Andy Michels
+ *                                       Steve Smero
+ * Date: 1 December 2016
  *
 **/
 
