@@ -5,9 +5,18 @@
 /******************************************************************************
  *3456789 123456789 123456789 123456789 123456789 123456789 123456789 123456789
  * Class 'MyRandom' for random number generation.
+ * This class should be considered a black box test; nothing
+ * much else should be changed from this class as the functions
+ * are responsible for generating the random data.
  *
  * Author: Duncan A. Buell
- * Date last modified: 23 May 2016
+ * Used with permission and modified by: Group 4
+ *                                       Erik Akeyson
+ *                                       Matthew Clapp
+ *                                       Harrison Goodman
+ *                                       Andy Michels
+ *                                       Steve Smero
+ * Date: 1 December 2016
 **/
 
 /******************************************************************************
