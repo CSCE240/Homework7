@@ -85,7 +85,9 @@ void OnePct::ComputeMeanAndDev() {
 /****************************************************************
 * Function 'CreateVoters'
 *
-* This function creates a new instance of a voters(kinda)
+* This function "creates" the voters. It starts by simulating the 
+* voters at hour zero, and then will produce more voters each hour
+* from then on
 * 
 * Parameters:
 *    config - The configuration
@@ -114,6 +116,11 @@ void OnePct::CreateVoters(const Configuration& config, MyRandom& random,
     ++sequence;
   }
 
+  // This for loop will generate each voter that is added on after hour zero
+  // Once the data is randomly generated for the voter, it is added to the map of
+  // voters
+  
+  
   for (int hour = 0; hour < config.election_day_length_hours_; ++hour) {
     percent = config.arrival_fractions_.at(hour);
     int voters_this_hour = round((percent / 100.0) * pct_expected_voters_);
@@ -135,6 +142,16 @@ void OnePct::CreateVoters(const Configuration& config, MyRandom& random,
 }
 
 /******************************************************************************
+* Function 'DoStatistics'
+*
+* This function calculatesd and outputs the stats about the wait time spent
+* by voters at the precint.
+* 
+* Parameters:
+*     iteration - an integer valued used for iteration
+*     config - a constant Configuration
+*     station_count - an integer value that represents the station count 
+*     map_for_histo - A map of integers
 **/
 int OnePct::DoStatistics(int iteration, const Configuration& config,
                          int station_count, map<int, int>& map_for_histo,
