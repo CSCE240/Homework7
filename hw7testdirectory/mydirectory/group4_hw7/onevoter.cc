@@ -1,9 +1,19 @@
 #include "onevoter.h"
 /****************************************************************
 * Implementation for the 'OneVoter' class.
+* This class creates in instance of one voter and will assign
+* randomly generated data for the values for the times.
+* Since the times are calculated in seconds, there are functions
+* to change them to minutes and hours.
 *
 * Author/copyright:  Duncan Buell. All rights reserved.
-* Date: 6 October 2016
+* Used with permission and modified by: Group 4
+ *                                       Erik Akeyson
+ *                                       Matthew Clapp
+ *                                       Harrison Goodman
+ *                                       Andy Michels
+ *                                       Steve Smero
+ * Date: 1 December 2016
 *
 **/
 
