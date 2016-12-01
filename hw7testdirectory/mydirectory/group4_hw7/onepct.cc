@@ -1,10 +1,31 @@
 #include "onepct.h"
 /****************************************************************
-* Implementation for the 'OnePct' class.
-*
-* Author/copyright:  Duncan Buell. All rights reserved.
-* Date: 21 May 2013
-*
+ * Implementation for the 'OnePct' class.
+ * This is an instance of one precinct, which contains:
+ *  -The number of expected voters total and per hour
+ *  -The name and number of the precinct
+ *  -The precinct turnout, expected compared to actual number
+ *   of voters
+ *  -Percentage of voters of a minority
+ *  -Number of voting stations at precinct
+ *  -The total number of voters for the precinct
+ *  -The mean and standard deviation amount for wait time for a
+ *   voter at the precinct and the voter map.
+ *
+ * It will compute the mean and standard deviation times,
+ * creat instances of voters, do the statistics of the voters,
+ * read all the data in, and then run the simulations for
+ * the precinct. It also contains the ToString function
+ * and the 
+ *
+ * Author/copyright:  Duncan Buell. All rights reserved.
+ * Used with permission and modified by: Group 4
+ *                                       Erik Akeyson
+ *                                       Matthew Clapp
+ *                                       Harrison Goodman
+ *                                       Andy Michels
+ *                                       Steve Smero
+ * Date: 1 December 2016
 **/
 
 static const string kTag = "OnePct: ";
