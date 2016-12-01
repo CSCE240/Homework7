@@ -1,8 +1,21 @@
 /****************************************************************
  * Main program for simulation.
+ * This class is essentially the one executing the functions
+ * of the configuration, precincts, and the simulation itself.
+ * It will read in the configuration files and initialize an
+ * instance of MyRandom, read in the precinct files, and
+ * run the simulation and produce the output needed by the
+ * user.
+ * 
  *
  * Author/copyright:  Duncan Buell. All rights reserved.
- * Date: 6 October 2016
+ * Used with permission and modified by: Group 4
+ *                                       Erik Akeyson
+ *                                       Matthew Clapp
+ *                                       Harrison Goodman
+ *                                       Andy Michels
+ *                                       Steve Smero
+ * Date: 1 December 2016
  *
 **/
 #include "main.h"
