@@ -1,8 +1,15 @@
 /****************************************************************
  * Header for the 'OnePct' class
+ * Simple header file to intialize the variables/functions.
  *
  * Author/copyright:  Duncan Buell
- * Date: 6 October 2016
+ * Used with permission and modified by: Group 4
+ *                                       Erik Akeyson
+ *                                       Matthew Clapp
+ *                                       Harrison Goodman
+ *                                       Andy Michels
+ *                                       Steve Smero
+ * Date: 1 December 2016
  *
 **/
 
