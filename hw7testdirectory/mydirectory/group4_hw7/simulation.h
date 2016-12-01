@@ -1,8 +1,16 @@
 /****************************************************************
  * Header for the 'Simulation' class.
+ * Generic header file for simulation which includes the
+ * definition for the map of precincts.
  *
  * Author/copyright:  Duncan Buell
- * Date: 19 July 2016
+ * Used with permission and modified by: Group 4
+ *                                       Erik Akeyson
+ *                                       Matthew Clapp
+ *                                       Harrison Goodman
+ *                                       Andy Michels
+ *                                       Steve Smero
+ * Date: 1 December 2016
  *
 **/
 
