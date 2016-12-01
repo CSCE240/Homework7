@@ -1,8 +1,14 @@
 /****************************************************************
  * Header for the 'OneVoter' class
+ * This header defines all the variables one voter will use.
  *
- * Author/copyright:  Duncan Buell
- * Date: 6 October 2016
+ * Used with permission and modified by: Group 4
+ *                                       Erik Akeyson
+ *                                       Matthew Clapp
+ *                                       Harrison Goodman
+ *                                       Andy Michels
+ *                                       Steve Smero
+ * Date: 1 December 2016
  *
 **/
 
