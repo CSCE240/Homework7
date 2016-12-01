@@ -1,9 +1,20 @@
 #include "configuration.h"
 /****************************************************************
  * Implementation for the 'Configuration' class.
+ * This is class the user will primarily deal with in order
+ * to configure the simulation with the data given. All the
+ * values found in this class will be used to affect the outcome
+ * of the simulation.
+ * 
  *
  * Author/copyright:  Duncan Buell. All rights reserved.
- * Date: 6 October 2016
+ * Used with permission and modified by: Group 4
+ *                                       Erik Akeyson
+ *                                       Matthew Clapp
+ *                                       Harrison Goodman
+ *                                       Andy Michels
+ *                                       Steve Smero
+ * Date: 1 December 2016
 **/
 
 static const string kTag = "CONFIG: ";
@@ -80,8 +91,14 @@ void Configuration::ReadConfiguration(Scanner& instream) {
 
 /****************************************************************
 **/
-string Configuration::ToString()
-{
+string Configuration::ToString() {
+ /*
+  * This is a ToString function that will print out and format the
+  * the simulation's configuration. Any data that is expressed in
+  * seconds will be converted to hours for the user's readability.
+  * Additionally, it will offset the arrival fractions, iterate
+  * through them, and format them.
+  */
   string s = "\n";
   
   s += kTag;
